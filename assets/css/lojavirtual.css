@@ -1,0 +1,201 @@
+/* =========================
+   Loja Virtual – Dashboard v3.0 (Modern)
+   ========================= */
+body {
+    background-color: #f9fafb;
+}
+.wrap {
+    --lv-card-title: 14px;
+    --lv-card-content: 18px;
+    --lv-chart-h: 420px;
+}
+.lv-title-admin {
+    font-size: 26px !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.lv-version-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    background-color: #e0e7ff;
+    color: #3730a3;
+    border-radius: 99px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+
+/* Grids */
+.dashboard-cards-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    margin: 24px 0;
+}
+.dashboard-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(420px, 1fr));
+    gap: 24px;
+    margin: 0 0 24px;
+}
+@media (max-width: 960px) {
+    .dashboard-cards-metrics { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+@media (max-width: 600px) {
+    .dashboard-cards-metrics, .dashboard-wrapper { grid-template-columns: 1fr; }
+}
+
+/* Card Moderno */
+.wrap .dashboard-card, .wrap .dashboard-box {
+    background: #ffffff;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wrap .dashboard-card:hover, .wrap .dashboard-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+}
+.wrap .dashboard-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.wrap .dashboard-card h3 {
+    margin: 0 0 10px;
+    font-size: var(--lv-card-title) !important;
+    font-weight: 500;
+    color: var(--lv-link, #6b7280);
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.wrap .dashboard-card h3 .lv-ico {
+    width: 18px;
+    height: 18px;
+    color: var(--lv-icons, #9ca3af);
+}
+.wrap .dashboard-card p.metric {
+    margin: 4px 0 16px;
+    font-weight: 600;
+    color: var(--lv-text, #1f2937);
+    font-size: var(--lv-card-content) !important;
+    line-height: 1.2;
+    flex-grow: 1;
+}
+.wrap .dashboard-card .button {
+    border-radius: 8px;
+    background: var(--lv-btn) !important;
+    color: var(--lv-btn-text) !important;
+    border: 0 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    margin-top: auto;
+    padding: 8px 16px !important;
+    height: auto !important;
+    line-height: 1.5 !important;
+    font-weight: 600;
+    text-align: center;
+}
+.wrap .dashboard-card .button:hover { filter: brightness(0.95); }
+.wrap .lv-card-footer {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--lv-link, #6b7280);
+    margin-top: auto;
+}
+
+/* Box Padrão Moderno (CORRIGIDO) */
+.wrap .dashboard-box {
+    padding: 22px 26px;
+    display: flex;
+    flex-direction: column;
+    height: 480px; /* Altura fixa para evitar crescimento infinito */
+}
+.wrap .lv-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--lv-border, #e5e7eb);
+    margin-bottom: 16px;
+    flex-shrink: 0;
+}
+.wrap .lv-box-header h3 {
+    display: block !important;
+    margin: 0;
+    font-size: 18px !important;
+    color: var(--lv-title, #111827);
+    font-weight: 600;
+}
+.wrap .lv-box-header .button { margin: 0; }
+.wrap .lv-box-content { flex-grow: 1; overflow-y: auto; margin-right: -12px; padding-right: 12px; }
+
+/* Gráficos (CORRIGIDO) */
+.wrap .dashboard-box.grafico,
+.wrap .dashboard-box.pagamentos {
+    padding: 0; /* Remove padding do box pai para o header e controles irem de ponta a ponta */
+}
+.wrap .chart-holder { padding: 20px; flex-grow: 1; }
+.wrap .chart-holder-pie { padding: 16px 26px 20px; flex-grow: 1; }
+.wrap .chart-holder canvas, .wrap .chart-holder-pie canvas { width: 100% !important; height: 100% !important; }
+
+/* Barra de Progresso (Meta Mensal) */
+.wrap .lv-progress-bar-wrapper { width: 100%; background: #f3f4f6; border-radius: 99px; height: 18px; margin: 12px 0 8px; overflow: hidden; }
+.wrap .lv-progress-bar { height: 100%; background: linear-gradient(to right, #6ee7b7, #10b981); border-radius: 99px; transition: width 0.6s ease-in-out; }
+.wrap .lv-progress-labels { display: flex; justify-content: space-between; font-size: 13px; color: var(--lv-link); font-weight: 500; }
+
+/* Listas (Top Produtos/Clientes) */
+.wrap .lv-list { list-style: none; margin: 0; padding: 0; }
+.wrap .lv-list li { display: flex; justify-content: space-between; align-items: center; padding: 14px 4px; border-bottom: 1px solid var(--lv-border, #f3f4f6); }
+.wrap .lv-list li:last-child { border-bottom: none; }
+.wrap .lv-list li a { font-weight: 600; color: var(--lv-text); text-decoration: none; }
+.wrap .lv-list li a:hover { color: var(--lv-bars); }
+.wrap .lv-list li span { font-size: 14px; font-weight: 500; color: var(--lv-link); text-align: right; }
+
+/* Scrollbar Fino */
+.lv-box-content::-webkit-scrollbar { width: 6px; }
+.lv-box-content::-webkit-scrollbar-track { background: transparent; }
+.lv-box-content::-webkit-scrollbar-thumb { background-color: #d1d5db; border-radius: 20px; }
+.lv-box-content { scrollbar-width: thin; scrollbar-color: #d1d5db transparent; }
+
+/* Rodapé */
+.wrap .lv-footer-brand { margin: 12px 0 0; text-align: right; color: #9ca3af; }
+.wrap .lv-footer-brand strong { color: #6b7280; }
+
+/* ========================= Dark Mode ========================= */
+body.lv-body-dark #wpcontent, body.lv-body-dark { background: #111827; }
+.lv-dark-mode { background-color: transparent; color: #d1d5db; }
+.lv-dark-mode .lv-version-badge { background-color: #3730a3; color: #e0e7ff; }
+.lv-dark-mode .lv-title-admin, .lv-dark-mode .lv-box-header h3 { color: #f9fafb; }
+.lv-dark-mode .dashboard-card, .lv-dark-mode .dashboard-box { background-color: #1f2937; border-color: #374151; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
+.lv-dark-mode .dashboard-card h3 { color: #9ca3af; }
+.lv-dark-mode .dashboard-card p.metric, .lv-dark-mode .lv-list li a { color: #f9fafb; }
+.lv-dark-mode .lv-card-footer, .lv-dark-mode .lv-list li span, .lv-dark-mode .lv-progress-labels { color: #9ca3af; }
+.lv-dark-mode .lv-box-header, .lv-dark-mode .lv-chart-controls { border-bottom-color: #374151; }
+.lv-dark-mode .lv-progress-bar-wrapper { background: #374151; }
+.lv-dark-mode .lv-list li { border-bottom-color: #374151; }
+.lv-dark-mode .lv-list li a:hover { color: #5294ff; }
+.lv-dark-mode .lv-box-content::-webkit-scrollbar-thumb { background-color: #4b5563; }
+.lv-dark-mode .lv-box-content { scrollbar-color: #4b5563 transparent; }
+.lv-dark-mode .lv-footer-brand, .lv-dark-mode .lv-footer-brand strong { color: #9ca3af; }
+
+/* ========================= Controles do Gráfico ========================= */
+.wrap .lv-chart-controls { display: flex; justify-content: space-between; align-items: center; padding: 14px 26px 8px; border-bottom: 1px solid var(--lv-border, #e5e7eb); flex-shrink: 0; }
+.wrap .lv-chart-controls h3 { margin: 0; font-size: 18px !important; color: var(--lv-title, #111827); font-weight: 600; }
+.wrap .lv-chart-toggle { display: flex; gap: 6px; }
+.wrap .lv-chart-toggle .button { padding: 4px 12px; font-size: 13px; height: auto; line-height: 1.5; background: #f3f4f6 !important; color: #374151 !important; border: 1px solid #d1d5db !important; box-shadow: none !important; text-shadow: none !important; border-radius: 8px; font-weight: 600; }
+.wrap .lv-chart-toggle .button:hover { background: #e5e7eb !important; border-color: #9ca3af !important; }
+.wrap .lv-chart-toggle .button.active { background: var(--lv-btn) !important; border-color: var(--lv-btn) !important; color: #fff !important; }
+
+.lv-dark-mode .lv-chart-toggle .button { background: #374151 !important; color: #f3f4f6 !important; border: 1px solid #4b5563 !important; }
+.lv-dark-mode .lv-chart-toggle .button:hover { background: #4b5563 !important; border-color: #6b7280 !important; }
+.lv-dark-mode .lv-chart-toggle .button.active { background: #3b82f6 !important; border-color: #3b82f6 !important; }
+
+/* ========================= Botão export ========================= */
+.button-secondary{display:inline-block!important;padding:.6rem 1.2rem!important;font-size:.95rem!important;font-weight:500!important;color:#1e40af!important;background-color:#dbeafe!important;border:1px solid #93c5fd!important;border-radius:.5rem!important;cursor:pointer!important;transition:all .2s ease-in-out!important}.button-secondary:hover{background-color:#bfdbfe!important;border-color:#60a5fa!important;color:#1e3a8a!important}.button-secondary:active{background-color:#60a5fa!important;border-color:#2563eb!important;color:#fff!important}.button-secondary:disabled{opacity:.6!important;cursor:not-allowed!important}
