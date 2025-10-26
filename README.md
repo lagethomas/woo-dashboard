@@ -33,4 +33,4 @@ Ajuste o visual e o conteúdo do seu dashboard em **Woo Dashboard > Configuraç�
 * **Atenção:** A versão dos assets (CSS/JS) é gerenciada dinamicamente (`time()`) para evitar problemas de cache durante o desenvolvimento.
 
 ---
-**Recursos Avançados:** Para ter acesso a relatórios avançados, mais gráficos e funcionalidades exclusivas, visite a [página oficial do plugin]([https://wpmasters.com.br](https://wpmasters.com.br/produto/woocommerce-dashboard-pro-painel-de-controle-e-metricas-em-tempo-real/)).
+**Recursos Avançados:** Para ter acesso a relatórios avançados, mais gráficos e funcionalidades exclusivas, visite a [página oficial do plugin]([https://wpmasters.com.br](https://wpmasters.com.br/produto/woocommerce-dashboard-pro-painel-de-controle-e-metricas-em-tempo-real)).
