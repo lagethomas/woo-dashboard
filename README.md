@@ -19,6 +19,8 @@ O Dashboard Loja Virtual substitui o painel padrão do WordPress por uma visão 
 * Otimizado com cache (Transients API) para performance.
 * Desenvolvido seguindo as melhores práticas e padrões do WordPress (Prefixação, i18n, Sanitização).
 
+<img width="1600" height="877" alt="image" src="https://github.com/user-attachments/assets/7189e63b-c570-4726-96ce-ca36dab1bcc8" />
+
 ## Instalação
 
 1.  Faça o upload da pasta `woo-dashboard` para o diretório `/wp-content/plugins/`.
